@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://salamandra-backend.onrender.com/api';
+const BASE_URL = 'https://salamandra-backend-yrcs.onrender.com/api';
 
 export const signUp = async credentials => {
   try {

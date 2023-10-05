@@ -2,7 +2,7 @@ import axios from 'axios';
 import { refreshUser } from '../redux/auth/operations';
 import { store } from '../redux/store';
 
-const BASE_URL = 'https://salamandra-backend.onrender.com/api';
+const BASE_URL = 'https://salamandra-backend-yrcs.onrender.com/api';
 
 axios.defaults.baseURL = BASE_URL;
 export * from './auth';
