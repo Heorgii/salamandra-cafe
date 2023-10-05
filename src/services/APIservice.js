@@ -1,7 +1,7 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-const BASE_URL = 'https://salamandra-backend.onrender.com/api';
+const BASE_URL = 'https://salamandra-backend-yrcs.onrender.com/api';
 
 async function fetchData(pathParams) {
   const axiosInstance = axios.create({
