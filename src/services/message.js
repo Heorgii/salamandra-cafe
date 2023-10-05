@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://salamandra-backend-yrcs.onrender.com/api";
+const BASE_URL = "https://salamandra-backend-h2hg.onrender.com/api";
 
 export function leaveMessage(body) {
   return axios.post(`${BASE_URL}/message`, body, {

@@ -9,8 +9,8 @@ import { GlobalStyle } from 'components/baseStyles/GlobalStyle';
 import { ThemeStatus } from 'components/ThemeStatus/ThemeProvider';
 
 window.global = {
-  BASE_URL: 'https://salamandra-backend-yrcs.onrender.com/api',
-  BASE_URL_IMG: 'https://salamandra-backend-yrcs.onrender.com/uploads/',
+  BASE_URL: 'https://salamandra-backend-h2hg.onrender.com/api',
+  BASE_URL_IMG: 'https://salamandra-backend-h2hg.onrender.com/uploads/',
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
