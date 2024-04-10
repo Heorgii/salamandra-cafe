@@ -63,7 +63,7 @@ export const Navigation = ({ catalog, isLoading, error }) => {
       });
 
       setActiveItem(currentActiveSection ? currentActiveSection.id : null);
-      console.log(currentActiveSection);
+      // console.log(currentActiveSection);
 
       const nav = document.getElementById('nav');
       if (!nav) return;
@@ -75,7 +75,7 @@ export const Navigation = ({ catalog, isLoading, error }) => {
         ? `nav-item-${currentActiveSection.id}`
         : null;
       const activeSection = document.getElementById(activeNavItemId);
-      console.log(activeSection);
+      // console.log(activeSection);
       if (activeSection) {
         activeSection.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
