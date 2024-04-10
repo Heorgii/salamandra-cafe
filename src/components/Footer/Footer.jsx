@@ -9,7 +9,7 @@ export const FooterComp = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Designed and Developed by Brand Maze
+        Дизайн і розробка Brand Maze
       </BrandMaze>
     </Footer>
   );

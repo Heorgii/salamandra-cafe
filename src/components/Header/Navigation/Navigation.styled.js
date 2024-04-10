@@ -12,12 +12,9 @@ export const NavBox = styled.div`
 
 export const Nav = styled.nav`
   width: 100%;
-  overflow-x: scroll;
-  white-space: nowrap;
+  overflow-x: auto;
   cursor: pointer;
 
-  width: 100%;
-  overflow-x: scroll;
   white-space: nowrap;
   position: ${(props) => (props.$isfixed === "fall" ? "fixed" : "static")};
   top: ${(props) => (props.$isfixed === "fall" ? "0" : "auto")};

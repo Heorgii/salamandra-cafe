@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from 'components/baseStyles/Variables.styled';
 import { SubtitleText } from 'components/baseStyles/CommonStyle.styled';
 
@@ -169,8 +169,97 @@ const Details = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 3px;
-  align-items: end;
+  align-items: flex-start;
   padding: 0 10px 10px 10px;
+  margin-top: 12px;
+`;
+
+// export const ModalWrapper = styled.div`
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 9999;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   width: 80%;
+//   max-width: 600px;
+//   padding: 20px;
+// `;
+
+// export const ModalContent = styled.div`
+//   background-color: #fff;
+//   padding: 20px;
+//   border-radius: 5px;
+// `;
+
+// export const CloseButton = styled.span`
+//   color: #aaa;
+//   float: right;
+//   font-size: 28px;
+//   font-weight: bold;
+
+//   &:hover,
+//   &:focus {
+//     color: black;
+//     text-decoration: none;
+//     cursor: pointer;
+//   }
+// `;
+
+const fadeIn = keyframes`
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+`;
+
+export const ModalWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+`;
+
+export const ModalContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  height: 267px;
+  border: 2px solid ${theme.colors.yellow};
+  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.3s ease-in-out;
+  /* display: flex; */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+`;
+
+export const CloseButton = styled.span`
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 `;
 
 export {

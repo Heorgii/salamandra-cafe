@@ -16,7 +16,7 @@ window.global = {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={'Loading'} persistor={persistor}>
+      <PersistGate loading={'Завантаження'} persistor={persistor}>
         <BrowserRouter basename="/">
         {/* <BrowserRouter basename="salamandra"> */}
           <ThemeStatus>

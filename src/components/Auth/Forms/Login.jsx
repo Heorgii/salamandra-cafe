@@ -75,7 +75,7 @@ export const Login = () => {
     <FormContainer>
       <Formik validationSchema={schemas.schemasLogin}>
         <FormStyled onSubmit={formik.handleSubmit} autoComplete="off">
-          <Title>Login Page</Title>
+          <Title>Вхід</Title>
           {isShown && (
             <Div>
               <Input
@@ -100,7 +100,7 @@ export const Login = () => {
               {formik.errors.email || formik.touched.email ? (
                 <ErrorBox>{formik.errors.email}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Email</Span>
+              <Span className="floating-label">Електрона адреса</Span>
             </Div>
           )}
 
@@ -126,21 +126,21 @@ export const Login = () => {
               {formik.errors.password && formik.touched.password ? (
                 <ErrorBox>{formik.errors.password}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Password</Span>
+              <Span className="floating-label">Пароль</Span>
             </Div>
           )}
           <BtnContainer>
             {isShown && (
               <Btn type="submit" disabled={isValid} aria-label="submit sign in">
-                {isLoading ? 'Loading' : 'Sign In'}
+                {isLoading ? 'Завантаження' : 'Увійти'}
               </Btn>
             )}
 
             {!isShown && (
-              <Btn type="submit">{isLoading ? 'Loading' : 'Sign In'}</Btn>
+              <Btn type="submit">{isLoading ? 'Завантаження' : 'Увійти'}</Btn>
             )}
             <BoxText>
-              <StyledLink to="/register">Create account</StyledLink>
+              <StyledLink to="/register">Створити профіль</StyledLink>
               {/* <StyledLink to="/forgot_password">
                 Forgot your password?
               </StyledLink> */}

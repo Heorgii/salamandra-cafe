@@ -1,6 +1,6 @@
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 const onLoading = () => {
-  return Loading.circle('Loading...', {
+  return Loading.circle('Завантаження...', {
     backgroundColor: 'transparent',
     svgSize: '160px',
     svgColor: `${props => props.theme.orangeLight}`,

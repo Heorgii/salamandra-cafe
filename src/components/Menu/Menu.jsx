@@ -22,6 +22,7 @@ import {
   DetailsTitle,
   Details,
 } from './Menu.styled';
+import { Modal } from './Modal/Modal';
 
 export const Menu = ({ catalog, activeSection }) => {
   const { BASE_URL_IMG } = window.global;
@@ -64,6 +65,8 @@ export const Menu = ({ catalog, activeSection }) => {
     })();
   }, []);
 
+  const [activeProduct, setActiveProduct] = useState(null);
+
   return (
     <Container>
       <MenuSection>
@@ -85,9 +88,56 @@ export const Menu = ({ catalog, activeSection }) => {
                         item.category === cat &&
                         item.product === it &&
                         item?.active && (
+                          // <MenuListItem
+                          //   key={uuidv4()}
+                          //   className={activeSection === it ? 'active' : ''}
+                          // >
+                          //   {item.images !== 'none' && item.images && (
+                          //     <Img
+                          //       src={BASE_URL_IMG + item.images}
+                          //       alt={item.name}
+                          //       loading="lazy"
+                          //     />
+                          //   )}
+                          //   {/* {item.images === 'none' && (
+                          //   <Img src={nophoto} alt={item.name} />
+                          // )} */}
+                          //   <InfoBox>
+                          //     <TitleItem>{item.name}</TitleItem>
+                          //     <DivForName>
+                          //       {item?.alcohol &&
+                          //         item.alcohol?.map(alc => (
+                          //           <AlcogolItem key={uuidv4()}>
+                          //             {alc}
+                          //           </AlcogolItem>
+                          //         ))}
+                          //     </DivForName>
+                          //     <InfoItem>
+                          //       <PriceItem>
+                          //         <DetailsTitle>
+                          //           {item?.price} {item?.currency}
+                          //         </DetailsTitle>
+                          //       </PriceItem>
+                          //       {item?.size.value !== 0 && (
+                          //         <DetailsItem>
+                          //           {item?.size.value} {item?.size.mesure}
+                          //         </DetailsItem>
+                          //       )}
+                          //     </InfoItem>
+                          //     <Details>
+                          //       {item?.details &&
+                          //         item.details?.map(det => (
+                          //           <DetailsText key={uuidv4()}>
+                          //             {det}
+                          //           </DetailsText>
+                          //         ))}
+                          //     </Details>
+                          //   </InfoBox>
+                          // </MenuListItem>
                           <MenuListItem
                             key={uuidv4()}
                             className={activeSection === it ? 'active' : ''}
+                            onClick={() => setActiveProduct(item)}
                           >
                             {item.images !== 'none' && item.images && (
                               <Img
@@ -96,40 +146,7 @@ export const Menu = ({ catalog, activeSection }) => {
                                 loading="lazy"
                               />
                             )}
-                            {/* {item.images === 'none' && (
-                            <Img src={nophoto} alt={item.name} />
-                          )} */}
-                            <InfoBox>
-                              <TitleItem>{item.name}</TitleItem>
-                              <DivForName>
-                                {item?.alcohol &&
-                                  item.alcohol?.map(alc => (
-                                    <AlcogolItem key={uuidv4()}>
-                                      {alc}
-                                    </AlcogolItem>
-                                  ))}
-                              </DivForName>
-                              <InfoItem>
-                                <PriceItem>
-                                  <DetailsTitle>
-                                    {item?.price} {item?.currency}
-                                  </DetailsTitle>
-                                </PriceItem>
-                                {item?.size.value !== 0 && (
-                                  <DetailsItem>
-                                    {item?.size.value} {item?.size.mesure}
-                                  </DetailsItem>
-                                )}
-                              </InfoItem>
-                              <Details>
-                                {item?.details &&
-                                  item.details?.map(det => (
-                                    <DetailsText key={uuidv4()}>
-                                      {det}
-                                    </DetailsText>
-                                  ))}
-                              </Details>
-                            </InfoBox>
+                            <TitleItem>{item.name}</TitleItem>
                           </MenuListItem>
                         )
                     )}
@@ -141,6 +158,9 @@ export const Menu = ({ catalog, activeSection }) => {
         {isLoading ? onLoading() : onLoaded()}
         {error && onFetchError('Whoops, something went wrong')}
       </MenuSection>
+      {activeProduct && (
+        <Modal product={activeProduct} onClose={() => setActiveProduct(null)} />
+      )}
     </Container>
   );
 };

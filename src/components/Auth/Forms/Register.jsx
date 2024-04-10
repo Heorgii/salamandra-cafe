@@ -106,7 +106,7 @@ export const Register = () => {
       </NavLink>
       <Formik validationSchema={schemas.registerSchema}>
         <FormStyled onSubmit={formik.handleSubmit} autoComplete="off">
-          <Title>Register</Title>
+          <Title>Реєстрація</Title>
           {isShown && (
             <Div>
               <Input
@@ -132,7 +132,7 @@ export const Register = () => {
               {formik.errors.email && formik.touched.email ? (
                 <ErrorBox>{formik.errors.email}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Email</Span>
+              <Span className="floating-label">Електрона адрасе</Span>
             </Div>
           )}
           {isShown && (
@@ -156,7 +156,7 @@ export const Register = () => {
               {formik.errors.password && formik.touched.password ? (
                 <ErrorBox>{formik.errors.password}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Password</Span>
+              <Span className="floating-label">Пароль</Span>
             </Div>
           )}
           {isShown && (
@@ -181,17 +181,17 @@ export const Register = () => {
               formik.touched.confirmPassword ? (
                 <ErrorBox>{formik.errors.confirmPassword}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Confirm Password</Span>
+              <Span className="floating-label">Підтвердити пароль</Span>
             </Div>
           )}
           {isShown && (
             <BtnContainer>
               <Btn type="button" onClick={showForm} disabled={isValid}>
-                Next
+                Далі
               </Btn>
               <BoxText>
-                <span>Already have an account?</span>
-                <StyledLink to="/signin">Sign In</StyledLink>
+                <span>Вже є профіль?</span>
+                <StyledLink to="/signin">Увійти</StyledLink>
               </BoxText>
             </BtnContainer>
           )}
@@ -218,7 +218,7 @@ export const Register = () => {
               {formik.errors.name && formik.touched.name ? (
                 <ErrorBox>{formik.errors.name}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Name</Span>
+              <Span className="floating-label">Імя</Span>
             </Div>
           )}
           {!isShown && (
@@ -245,26 +245,26 @@ export const Register = () => {
               {formik.errors.phone && formik.touched.phone ? (
                 <ErrorBox>{formik.errors.phone}</ErrorBox>
               ) : null}
-              <Span className="floating-label">Mobile phone</Span>
+              <Span className="floating-label">Номер теелфону</Span>
             </Div>
           )}
           {!isShown && (
             <>
               <BtnContainer>
                 <Btn type="submit" aria-label="submit registration">
-                  {isLoading ? 'Loading' : 'Register'}
+                  {isLoading ? 'Завантаження' : 'Реєстрація'}
                 </Btn>
                 <BackButton
                   type="button"
                   aria-label="back button"
                   onClick={hideForm}
                 >
-                  Back
+                  Назад
                 </BackButton>
               </BtnContainer>
               <BoxText>
-                <span>Already have an account?</span>
-                <StyledLink to="/signin">LOG IN</StyledLink>
+                <span>Вже є профіль?</span>
+                <StyledLink to="/signin">Увійти</StyledLink>
               </BoxText>
             </>
           )}

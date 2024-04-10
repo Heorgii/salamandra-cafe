@@ -50,7 +50,7 @@ export const App = () => {
     <></>
   ) : (
     <HelmetProvider>
-      <Suspense fallback={<div>{'Loading...'}</div>}>
+      <Suspense fallback={<div>{'Завантаження...'}</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout catalog={catalog} isLoading={isLoading} error={error}/>}>
             <Route index element={<LandingPage catalog={catalog}/>} />

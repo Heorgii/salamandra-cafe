@@ -6,7 +6,7 @@ import { FooterComp } from './Footer/Footer';
 export const SharedLayout = ({ catalog, isLoading, error }) => {
   return (
     <>
-      <Suspense fallback={'Loading...'}>
+      <Suspense fallback={'Завантаження...'}>
         <Header catalog={catalog} isLoading={isLoading} error={error} />
         <main>
           <Outlet />

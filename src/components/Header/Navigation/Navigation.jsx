@@ -23,6 +23,33 @@ export const Navigation = ({ catalog, isLoading, error }) => {
 
   const currentUrl = window.location.href.split('#')[0];
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const sections = document.querySelectorAll('.menu-section');
+  //     let currentActiveSection = null;
+
+  //     sections.forEach(section => {
+  //       const rect = section.getBoundingClientRect();
+  //       if (rect.top <= 0 && rect.bottom >= 0) {
+  //         currentActiveSection = section.id;
+  //       }
+  //     });
+
+  //     setActiveItem(currentActiveSection);
+
+  //     const nav = document.getElementById('nav');
+  //     if (!nav) return;
+
+  //     const navPosition = nav.getBoundingClientRect().top;
+  //     navPosition <= 0 ? setIsFixed('fall') : setIsFixed('');
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.menu-section');
@@ -31,17 +58,27 @@ export const Navigation = ({ catalog, isLoading, error }) => {
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 0 && rect.bottom >= 0) {
-          currentActiveSection = section.id;
+          currentActiveSection = section;
         }
       });
 
-      setActiveItem(currentActiveSection);
+      setActiveItem(currentActiveSection ? currentActiveSection.id : null);
+      console.log(currentActiveSection);
 
       const nav = document.getElementById('nav');
       if (!nav) return;
 
       const navPosition = nav.getBoundingClientRect().top;
       navPosition <= 0 ? setIsFixed('fall') : setIsFixed('');
+
+      const activeNavItemId = currentActiveSection
+        ? `nav-item-${currentActiveSection.id}`
+        : null;
+      const activeSection = document.getElementById(activeNavItemId);
+      console.log(activeSection);
+      if (activeSection) {
+        activeSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -64,6 +101,7 @@ export const Navigation = ({ catalog, isLoading, error }) => {
           {catalog.map((item, i) => (
             <NavListItem
               key={i}
+              id={`nav-item-${item}`}
               className={activeItem === item ? 'active' : ''}
               onClick={() => handleItemClick(item)}
             >
