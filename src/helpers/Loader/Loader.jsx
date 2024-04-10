@@ -1,11 +1,12 @@
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 const onLoading = () => {
-  return Loading.circle('Завантаження...', {
+  return Loading.hourglass( {
     backgroundColor: 'transparent',
-    svgSize: '160px',
-    svgColor: `${props => props.theme.orangeLight}`,
-    messageFontSize: '20px',
+    // svgSize: '160px',
+    svgColor: '#FFB800',
+    // messageFontSize: '20px',
   });
+
 };
 
 const onLoaded = () => {
