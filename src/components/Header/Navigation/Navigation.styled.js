@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 export const NavBox = styled.div`
   margin-top: 200px;
-  padding: 0 24px 0;
+  /* padding: 0 24px 0; */
 
-  @media screen and (min-width: ${theme.breakpoints.desktop}) {
+  /* @media screen and (min-width: ${theme.breakpoints.desktop}) {
     padding: 0 64px 0;
-  }
+  } */
 `;
 
 export const Nav = styled.nav`

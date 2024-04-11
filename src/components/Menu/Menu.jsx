@@ -81,7 +81,10 @@ export const Menu = ({ catalog, activeSection }) => {
               <MenuTitle id={it}>{it}</MenuTitle>
               {subGroup[`${it}`]?.map(cat => (
                 <div key={uuidv4()}>
-                  {it !== cat && <MenuSubTitle>{cat}</MenuSubTitle>}
+                  {/* {it !== cat && <MenuSubTitle>{cat}</MenuSubTitle>} */}
+                  {cat !== 'Смачна кава' && (
+      <MenuSubTitle>{cat}</MenuSubTitle>
+    )}
                   <MenuList>
                     {menu?.map(
                       item =>
